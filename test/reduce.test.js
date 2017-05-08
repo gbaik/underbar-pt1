@@ -13,4 +13,28 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('reduces an object of numbers to a sum, *with* an explicit initial value for the accumulator', () => {
+    const nums = {
+      num1: 1,
+      num2: 2,
+      num3: 3,
+      num4: 4,
+      num5: 5
+    };
+    const result = _.reduce(nums, (acc, num) => acc + num, 0);
+    expect(result).toEqual(15);
+  });
+
+  it('reduces an object of numbers to a sum, *without* an explicit initial value for the accumulator', () => {
+    const nums = {
+      num1: 1,
+      num2: 2,
+      num3: 3,
+      num4: 4,
+      num5: 5
+    };
+    const result = _.reduce(nums, (a, b) => a + b);
+    expect(result).toEqual(15);
+  });
+
 });

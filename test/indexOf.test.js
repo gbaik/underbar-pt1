@@ -26,4 +26,9 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns -1 for a missing value at a given offset', () => {
+    const arr = ['foo', 'bar', 'baz', 'baz', 'foo'];
+    expect(_.indexOf(arr, 'bar', 2)).toBe(-1);
+  });
+
 });

@@ -5,6 +5,10 @@ describe('last()', () => {
     expect(_.last(['a', 'b', 'c'])).toEqual('c');
   });
 
+  it('returns the last element of an array, even if its nested', () => {
+    expect(_.last(['a', ['b', 'c']])).toEqual(['b', 'c']);
+  });
+
   it('returns the last 2 elements of an array', () => {
     expect(_.last(['a', 'b', 'c'], 2)).toEqual(['b', 'c']);
   });

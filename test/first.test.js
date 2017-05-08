@@ -5,6 +5,10 @@ describe('first()', () => {
     expect(_.first(['a', 'b', 'c'])).toEqual('a');
   });
 
+  it('returns the first element of an array, even if its nested', () => {
+    expect(_.first([['a', 'b'], 'b', 'c'])).toEqual(['a', 'b']);
+  });
+
   it('returns the first 2 elements of an array', () => {
     expect(_.first(['a', 'b', 'c'], 2)).toEqual(['a', 'b']);
   });

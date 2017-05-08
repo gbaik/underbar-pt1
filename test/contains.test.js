@@ -31,4 +31,25 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if object contains the target value', () => {
+    const ponyCount = {
+      'Fluttershy': 10,
+      'Pinkie Pie': 42,
+      'Rainbow Dash': 123123,
+      'Rarity': 1
+    };
+    expect(_.contains(ponyCount, 42)).toBe(true);
+  });
+
+  it('returns false if object does not contain the target value', () => {
+    const ponyCount = {
+      'Fluttershy': 10,
+      'Pinkie Pie': 42,
+      'Rainbow Dash': 123123,
+      'Rarity': 1
+    };
+    expect(_.contains(ponyCount, 123)).toBe(false);
+  });
+
+
 });

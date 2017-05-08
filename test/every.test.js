@@ -17,5 +17,15 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true if all numbers in an array are even and we test for even numbers', () => {
+      const nums = [2, 4, 6, 8];
+      expect(_.every(nums, num => num % 2 === 0)).toBe(true);
+    });
+
+    it('returns false if not all numbers in an array are even and we test for even numbers', () => {
+      const nums = [2, 4, 6, 7, 8];
+      expect(_.every(nums, num => num % 2 === 0)).toBe(false);
+    });
+
   });
 });

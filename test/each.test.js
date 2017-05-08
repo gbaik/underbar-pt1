@@ -39,5 +39,21 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  it('iterates every top level of an object, passing the value, the corresponding key, and the entire object to the callback', () => {
+    const nestedObj = {
+      person1: {
+        name: 'Billy',
+        age: 98123,
+        occupation: 'goat'
+      }
+    };
+    let count = 0;
+    _.each(nestedObj, function(value, key, iteratedNestedObj) {
+      expect(value).toEqual(iteratedNestedObj[key]);
+      count += 1;
+    });
+    expect(count).toBe(1);
+  });
 });
 

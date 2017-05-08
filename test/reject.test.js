@@ -6,6 +6,11 @@ describe('reject()', () => {
     expect(_.reject(nums, num => num % 2 === 1)).toEqual([2, 4, 6, 8, 10]);
   });
 
+  it('rejects even numbers from an array', () => {
+    const nums = [1, 3, 4, 5, 7, 8, 9, 10];
+    expect(_.reject(nums, num => num % 2 === 0)).toEqual([1, 3, 5, 7, 9]);
+  });
+
   it('rejects null values from an object', () => {
     const order = {
       entree: 'burger',
